@@ -1,0 +1,32 @@
+int sensor =2;
+int led =12;
+int buzzer =13;
+int pirSensor =0;
+
+void setup()
+{
+  pinMode(sensor, INPUT);
+  pinMode(led, OUTPUT);
+  pinMode(buzzer, OUTPUT);
+  
+}
+
+void loop()
+{
+  
+  pirSensor = digitalRead(sensor);
+  if (pirSensor == HIGH)
+  {
+  
+    digitalWrite(led, HIGH);
+    tone(buzzer, 1000, 500);
+  
+  }
+  
+  else {
+    
+    digitalWrite(led, LOW);
+  }
+  
+  delay(10);
+}
